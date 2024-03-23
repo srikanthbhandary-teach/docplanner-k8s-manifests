@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: php-app
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+      - name: php-app
+        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/php:227d7b1
+        ports:
+        - containerPort: 80
+        env:
+          - name: APP_ENV
+            value: prod
+        volumeMounts:
+        - name: config-volume
+          mountPath: /var/www/html/config
+          subPath: config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: php-config

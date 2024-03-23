@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: go-app
+  template:
+    metadata:
+      labels:
+        app: go-app
+    spec:
+      containers:
+      - name: go-app
+        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: secret-volume
+          mountPath: /usr/local/bin/file.p12
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: go-app-secret

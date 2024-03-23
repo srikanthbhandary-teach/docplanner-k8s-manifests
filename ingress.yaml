@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8singress
+  namespace: default
+  annotations:    
+    # Share a single ALB with all Ingress rules with a specific group name
+    alb.ingress.kubernetes.io/group.name: k8singress
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
+    alb.ingress.kubernetes.io/healthcheck-port: "80"
+    # alb.ingress.kubernetes.io/certificate-arn: {CERTIFICATE}
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+    # alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /api/v1
+            pathType: Prefix
+            backend:
+              service:
+                name: go-app-service   # Name of your service handling /api/v1
+                port:
+                  number: 80  # Port of your service
+          - path: /api/v2
+            pathType: Prefix
+            backend:
+              service:
+                name: php-app-service  # Name of your service handling /api/v2
+                port:
+                  number: 80  # Port of your service
