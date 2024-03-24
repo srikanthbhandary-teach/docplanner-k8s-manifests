@@ -15,6 +15,13 @@ spec:
       containers:
       - name: php-app
         image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/php:d7ae64b9f3fe1942b029ac0a7472b30f8222a88a
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 80
         env:
