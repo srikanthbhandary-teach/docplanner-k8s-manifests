@@ -4,7 +4,6 @@ metadata:
   name: go-app
   namespace: default
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: go-app
