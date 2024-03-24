@@ -4,5 +4,6 @@ data:
 kind: ConfigMap
 metadata:  
   name: php-config
+  namespace: default
   
   
