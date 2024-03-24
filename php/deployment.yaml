@@ -4,7 +4,6 @@ metadata:
   name: php-app
   namespace: default
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: php-app
