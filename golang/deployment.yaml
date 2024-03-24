@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: go-app
   namespace: default
-spec:
+spec:  
   selector:
     matchLabels:
       app: go-app
@@ -14,7 +14,14 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:a5c3beed16880128859c7f9b84cc95619d85b034
+        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:latest
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 80
         volumeMounts:
