@@ -7,4 +7,4 @@
 
 ![image](https://github.com/srikanthbhandary-teach/docplanner-k8s-manifests/assets/11585859/1e0da8b4-a9ca-41c0-a1f1-468cb08c7b38)
 
-![image](https://github.com/srikanthbhandary-teach/docplanner-k8s-manifests/assets/11585859/625af46e-397a-4171-a6d3-42287a2e2f08)
+
