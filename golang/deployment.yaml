@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:03a3770e38a471375e94c58c1d0fa5b56e25b5f1
+        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:latest
         ports:
         - containerPort: 80
         volumeMounts:
