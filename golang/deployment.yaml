@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:a5c3beed16880128859c7f9b84cc95619d85b034
+        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/golang:59df503396cd96d3268ae53323c5542c09c183a0
         resources:
           requests:
             memory: "64Mi"
