@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: php-app
-        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/php:6062e41ad72a4b515baae3a7e1754ac531fcaade
+        image: 594081136085.dkr.ecr.eu-north-1.amazonaws.com/php:2bfa03db6b2327bbda8410560c4341c44ce53c12
         resources:
           requests:
             memory: "64Mi"
